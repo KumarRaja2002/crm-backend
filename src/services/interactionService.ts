@@ -18,11 +18,11 @@ export class InteractionService {
     return await getRecordByColumn(this.tableName, 'customer_id', customerId);
   }
 
-  async updateInteraction(id: number, data: Partial<NewInteraction>) {
-    return await updateSingleRecord(this.tableName, data, id);
+  async updateInteraction(id: number, data: NewInteraction) {
+    return await updateSingleRecord(this.tableName,data, id);
   }
 
-  async updateInteractionByField(fieldName: string, fieldValue: any, data: Partial<NewInteraction>) {
+  async updateInteractionByField(fieldName: string, fieldValue: any, data: NewInteraction) {
     return await updateRecordByField(this.tableName, data, fieldValue, fieldName);
   }
 
